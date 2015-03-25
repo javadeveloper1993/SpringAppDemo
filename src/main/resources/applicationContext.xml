@@ -23,4 +23,7 @@
 		<!--<property name="age" value="22"></property> -->
 	</bean>
 
+	<!-- Bean Post Processor Class -->
+	<bean class="com.example.spring.bean.beanPostProcessor.BeanPostProcessorDemo"  />
+
 </beans>

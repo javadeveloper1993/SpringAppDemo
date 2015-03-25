@@ -30,5 +30,6 @@ public class SingletonBeanScope {
 		Employee employee1 = (Employee) context.getBean("empInfoScope");
 		logger.info(">>>>>> 2nd Object");
 		logger.info(employee1);
+		context.registerShutdownHook();
 	}
 }

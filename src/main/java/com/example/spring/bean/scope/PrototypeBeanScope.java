@@ -26,12 +26,13 @@ public class PrototypeBeanScope {
 		employee.setMiddleName("J");
 		employee.setLastName("Patel");
 		employee.setAge(25);
-		logger.info(">>>>>> 1st Object");
-		logger.info(employee);
+		 logger.info(">>>>>> 1st Object");
+		 logger.info(employee);
 
 		Employee employee1 = (Employee) context.getBean("empInfoScope");
-		logger.info(">>>>>> 2nd Object");
-		logger.info(employee1);
+		 logger.info(">>>>>> 2nd Object");
+		 logger.info(employee1);
+		context.registerShutdownHook();
 	}
 
 }

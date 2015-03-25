@@ -68,12 +68,12 @@ public class Employee implements InitializingBean, DisposableBean {
 
 	@Override
 	public void destroy() throws Exception {
-//		logger.info(">>>>>>> Beans was Destroyed >>>>>>>>>");
+		logger.info(">>>>>>> Beans was Destroyed >>>>>>>>>");
 	}
 
 	@Override
 	public void afterPropertiesSet() throws Exception {
-//		logger.info(">>>>>>> Beans was Created >>>>>>>>>");
+		logger.info(">>>>>>> Beans was Created >>>>>>>>>");
 	}
 
 }
