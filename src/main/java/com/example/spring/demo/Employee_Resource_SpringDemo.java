@@ -1,5 +1,6 @@
-package com.example.spring;
+package com.example.spring.demo;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.core.io.ClassPathResource;
@@ -11,21 +12,23 @@ import com.example.model.Employee;
  * @author maulik.patel
  * 
  */
+@SuppressWarnings("deprecation")
 public class Employee_Resource_SpringDemo {
+	private static final Logger logger = Logger
+			.getLogger(Employee_Resource_SpringDemo.class);
 
-	@SuppressWarnings("deprecation")
 	public static void main(String[] args) {
 		try {
 			Resource resource = new ClassPathResource("applicationContext.xml");
-			System.out.println(resource.contentLength());
-			System.out.println(resource.getDescription());
-			System.out.println(resource.isOpen());
-			System.out.println(resource.getURI());
-			System.out.println(resource.getURL());
+			// logger.info(resource.contentLength());
+			// logger.info(resource.getDescription());
+			// logger.info(resource.isOpen());
+			// logger.info(resource.getURI());
+			// logger.info(resource.getURL());
 			BeanFactory beanFactory = new XmlBeanFactory(resource);
-			System.out.println(beanFactory.isSingleton("empInfo"));
+			logger.info("IsSingleton : " + beanFactory.isSingleton("empInfo"));
 			Employee employee = (Employee) beanFactory.getBean("empInfo");
-			System.out.println(employee);
+			logger.info("Employee : " + employee);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

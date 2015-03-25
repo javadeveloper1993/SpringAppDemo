@@ -9,6 +9,7 @@
 	<description>This Is Spring App Demo</description>
 	<properties>
 		<spring.version>4.1.5.RELEASE</spring.version>
+		<log4j.version>1.2.17</log4j.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -70,6 +71,13 @@
 			<groupId>commons-logging</groupId>
 			<artifactId>commons-logging</artifactId>
 			<version>1.2</version>
+		</dependency>
+
+		<!-- Log4j -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j.version}</version>
 		</dependency>
 	</dependencies>
 </project>

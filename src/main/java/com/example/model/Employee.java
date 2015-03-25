@@ -1,9 +1,17 @@
 package com.example.model;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
 /**
  * @author maulik.patel
  * 
  */
-public class Employee {
+public class Employee implements InitializingBean, DisposableBean {
+
+	@SuppressWarnings("unused")
+	private static final Logger logger = Logger.getLogger(Employee.class);
 
 	private String id;
 	private String firstName;
@@ -56,6 +64,16 @@ public class Employee {
 		return "Employee [id=" + id + ", firstName=" + firstName
 				+ ", middleName=" + middleName + ", lastName=" + lastName
 				+ ", age=" + age + "]";
+	}
+
+	@Override
+	public void destroy() throws Exception {
+//		logger.info(">>>>>>> Beans was Destroyed >>>>>>>>>");
+	}
+
+	@Override
+	public void afterPropertiesSet() throws Exception {
+//		logger.info(">>>>>>> Beans was Created >>>>>>>>>");
 	}
 
 }
