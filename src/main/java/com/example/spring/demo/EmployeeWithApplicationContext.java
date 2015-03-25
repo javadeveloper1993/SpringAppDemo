@@ -1,7 +1,7 @@
 package com.example.spring.demo;
 
 import org.apache.log4j.Logger;
-import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.example.model.Employee;
@@ -17,7 +17,7 @@ public class EmployeeWithApplicationContext {
 	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 
-		ApplicationContext context = new ClassPathXmlApplicationContext(
+		AbstractApplicationContext context = new ClassPathXmlApplicationContext(
 				"applicationContext.xml");
 		Employee employee = (Employee) context.getBean("empInfo");
 		logger.info(employee);
