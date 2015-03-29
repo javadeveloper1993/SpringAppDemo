@@ -1,4 +1,4 @@
-package com.example.spring.bean.scope;
+package com.example.spring.bean.beanScope;
 
 import org.apache.log4j.Logger;
 import org.springframework.context.support.AbstractApplicationContext;
@@ -17,7 +17,7 @@ public class SingletonBeanScope {
 	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 		AbstractApplicationContext context = new ClassPathXmlApplicationContext(
-				"applicationContext.xml");
+				"ApplicationContext.xml");
 		Employee employee = (Employee) context.getBean("empInfoScope");
 		employee.setId("Emp002");
 		employee.setFirstName("Parth");

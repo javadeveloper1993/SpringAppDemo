@@ -18,7 +18,7 @@ public class ApplicationContextContainerDemo {
 	public static void main(String[] args) {
 
 		AbstractApplicationContext context = new ClassPathXmlApplicationContext(
-				"applicationContext.xml");
+				"ApplicationContext.xml");
 		Employee employee = (Employee) context.getBean("empInfo");
 		logger.info(employee);
 

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<!-- default-init-method="init" default-destroy-method="destroye"> -->
+
+	<!-- Bean Post Processor Class Example -->
+	<bean class="com.example.spring.bean.beanPostProcessor.BeanPostProcessorDemo">
+	</bean>
+
+
+	<!-- Simple Bean Example -->
+	<bean id="empInfo" class="com.example.model.Employee">
+		<property name="id" value="Emp001"></property>
+		<property name="firstName" value="Test"></property>
+		<property name="middleName" value="User"></property>
+		<property name="lastName" value="Test"></property>
+		<property name="age" value="10"></property>
+	</bean>
+
+
+	<!-- Beans Scope Example -->
+	<bean id="empInfoScope" class="com.example.model.Employee" scope="prototype">
+		<!--<property name="id" value="Emp002"></property> -->
+		<!--<property name="firstName" value="Tejas"></property> -->
+		<!--<property name="middleName" value="J"></property> -->
+		<!--<property name="lastName" value="Patel"></property> -->
+		<!--<property name="age" value="22"></property> -->
+	</bean>
+
+
+	<!-- Bean Life Cycle Example -->
+	<bean id="studentLifeCycle" class="com.example.model.Student">
+	</bean>
+
+
+	<!-- Bean Defination ( Inheritence ) Example -->
+
+	<bean id="helloWorld" class="com.example.model.HelloWorld"
+		abstract="true">
+		<property name="message1" value="Hello World!" />
+		<property name="message2" value="Hello Second World!" />
+	</bean>
+
+	<bean id="helloIndia" class="com.example.model.HelloIndia" parent="helloWorld">
+		<property name="message2" value="Hello India! Duplicate" />
+		<property name="message3" value="Namaste India!" />
+	</bean>
+
+	<!-- Inner Bean Example -->
+	<bean id="outerBeanTextEditor" class="com.example.model.TextEditor">
+		<property name="spellChecker">
+			<bean id="innerBeanSpellChecker" class="com.example.model.SpellChecker" />
+		</property>
+	</bean>
+
+
+</beans>

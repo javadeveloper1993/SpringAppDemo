@@ -1,16 +1,13 @@
 package com.example.model;
 
 import org.apache.log4j.Logger;
-import org.springframework.beans.factory.DisposableBean;
-import org.springframework.beans.factory.InitializingBean;
 
 /**
  * @author maulik.patel
  * 
  */
-public class Employee implements InitializingBean, DisposableBean {
+public class Employee {
 
-	@SuppressWarnings("unused")
 	private static final Logger logger = Logger.getLogger(Employee.class);
 
 	private String id;
@@ -66,14 +63,12 @@ public class Employee implements InitializingBean, DisposableBean {
 				+ ", age=" + age + "]";
 	}
 
-	@Override
-	public void destroy() throws Exception {
-		logger.info(">>>>>>> Beans was Destroyed >>>>>>>>>");
+	public void init() {
+		logger.info("Employee Beans is going through init....!!!");
 	}
 
-	@Override
-	public void afterPropertiesSet() throws Exception {
-		logger.info(">>>>>>> Beans was Created >>>>>>>>>");
+	public void destroye() {
+		logger.info("Employee Beans will destroy now....!!!");
 	}
 
 }

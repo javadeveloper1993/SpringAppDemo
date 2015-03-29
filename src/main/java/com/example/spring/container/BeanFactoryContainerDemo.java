@@ -19,7 +19,7 @@ public class BeanFactoryContainerDemo {
 
 	public static void main(String[] args) {
 		try {
-			Resource resource = new ClassPathResource("applicationContext.xml");
+			Resource resource = new ClassPathResource("ApplicationContext.xml");
 			// logger.info(resource.contentLength());
 			// logger.info(resource.getDescription());
 			// logger.info(resource.isOpen());
