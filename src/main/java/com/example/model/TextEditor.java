@@ -13,7 +13,7 @@ public class TextEditor {
 
 	// A setter method to inject the dependency.
 	public void setSpellChecker(SpellChecker spellChecker) {
-		logger.info("Inside setSpellChecker.");
+//		logger.info("Inside setSpellChecker.");
 		this.spellChecker = spellChecker;
 	}
 

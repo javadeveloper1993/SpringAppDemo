@@ -10,7 +10,7 @@ public class SpellChecker {
 	private static final Logger logger = Logger.getLogger(SpellChecker.class);
 
 	public SpellChecker() {
-		logger.info("Inside SpellChecker constructor.");
+//		logger.info("Inside SpellChecker constructor.");
 	}
 
 	public void checkSpelling() {

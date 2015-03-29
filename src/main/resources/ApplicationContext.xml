@@ -55,5 +55,29 @@
 		</property>
 	</bean>
 
+	<!-- ========================= Dependency Example ================================ -->
+	<bean id="employeeDI" class="com.example.model.DI.EmployeeDI">
+		<constructor-arg ref="addressRef"></constructor-arg>
+		<constructor-arg>
+			<ref bean="studentRef" />
+		</constructor-arg>
+		<constructor-arg value="10" type="int"></constructor-arg>
+		<constructor-arg value="Ramesh"></constructor-arg>
+		<constructor-arg value="true" type="Boolean"></constructor-arg>
+	</bean>
+
+	<!-- Refernce Bean Customer -->
+	<bean id="addressRef" class="com.example.model.DI.AddressDI">
+		<constructor-arg value="Ahmedabad"></constructor-arg>
+		<constructor-arg value="Gujarat"></constructor-arg>
+		<constructor-arg value="India"></constructor-arg>
+	</bean>
+
+	<bean id="studentRef" class="com.example.model.DI.StudentDI">
+		<constructor-arg value="stu001"></constructor-arg>
+		<constructor-arg value="Maulik"></constructor-arg>
+		<constructor-arg value="Ranip"></constructor-arg>
+	</bean>
+
 
 </beans>
