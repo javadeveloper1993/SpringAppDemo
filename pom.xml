@@ -8,7 +8,7 @@
 	<url>git@github.com:javadeveloper1993/SpringAppDemo.git</url>
 	<description>This Is Spring App Demo</description>
 	<properties>
-		<spring.version>4.1.5.RELEASE</spring.version>
+		<spring.version>4.1.6.RELEASE</spring.version>
 		<log4j.version>1.2.17</log4j.version>
 	</properties>
 	<dependencies>
@@ -29,6 +29,12 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
 			<version>${spring.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 		<!-- Spring Beans Jar -->
@@ -79,5 +85,23 @@
 			<artifactId>log4j</artifactId>
 			<version>${log4j.version}</version>
 		</dependency>
+
+		<!-- SLF4j -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>1.5.8</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.5.8</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.5.8</version>
+		</dependency>
+
 	</dependencies>
 </project>

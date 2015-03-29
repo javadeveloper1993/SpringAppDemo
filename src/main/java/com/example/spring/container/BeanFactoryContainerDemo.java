@@ -1,4 +1,4 @@
-package com.example.spring.demo;
+package com.example.spring.container;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.BeanFactory;
@@ -13,9 +13,9 @@ import com.example.model.Employee;
  * 
  */
 @SuppressWarnings("deprecation")
-public class Employee_Resource_SpringDemo {
+public class BeanFactoryContainerDemo {
 	private static final Logger logger = Logger
-			.getLogger(Employee_Resource_SpringDemo.class);
+			.getLogger(BeanFactoryContainerDemo.class);
 
 	public static void main(String[] args) {
 		try {

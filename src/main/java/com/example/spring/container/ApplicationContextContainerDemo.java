@@ -1,4 +1,4 @@
-package com.example.spring.demo;
+package com.example.spring.container;
 
 import org.apache.log4j.Logger;
 import org.springframework.context.support.AbstractApplicationContext;
@@ -10,9 +10,9 @@ import com.example.model.Employee;
  * @author maulik.patel
  * 
  */
-public class EmployeeWithApplicationContext {
+public class ApplicationContextContainerDemo {
 	private static final Logger logger = Logger
-			.getLogger(EmployeeWithApplicationContext.class);
+			.getLogger(ApplicationContextContainerDemo.class);
 
 	@SuppressWarnings("resource")
 	public static void main(String[] args) {
