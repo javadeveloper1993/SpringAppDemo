@@ -9,7 +9,7 @@ import com.example.model.Student;
  * @author Maulik
  * 
  */
-public class StudentBranLifeCycleDemo {
+public class StudentBeanLifeCycleDemo {
 	@SuppressWarnings({ "resource", "unused" })
 	public static void main(String[] args) {
 
