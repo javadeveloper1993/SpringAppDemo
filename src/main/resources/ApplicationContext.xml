@@ -35,7 +35,7 @@
 	</bean>
 
 
-	<!-- Bean Defination ( Inheritence ) Example -->
+	<!-- Bean Definition ( Inheritance ) Example -->
 
 	<bean id="helloWorld" class="com.example.model.HelloWorld"
 		abstract="true">
@@ -55,7 +55,7 @@
 		</property>
 	</bean>
 
-	<!-- ========================= Dependency Example ================================ -->
+	<!-- ========================= Dependency Example :: Constructor ================================ -->
 	<bean id="employeeDI" class="com.example.model.DI.EmployeeDI">
 		<constructor-arg ref="addressRef"></constructor-arg>
 		<constructor-arg>
@@ -66,7 +66,7 @@
 		<constructor-arg value="true" type="Boolean"></constructor-arg>
 	</bean>
 
-	<!-- Refernce Bean Customer -->
+	<!-- Reference Bean Customer -->
 	<bean id="addressRef" class="com.example.model.DI.AddressDI">
 		<constructor-arg value="Ahmedabad"></constructor-arg>
 		<constructor-arg value="Gujarat"></constructor-arg>
@@ -79,5 +79,79 @@
 		<constructor-arg value="Ranip"></constructor-arg>
 	</bean>
 
+	<!-- Constructor DI With Collection Value :- List With String -->
+	<bean id="collectionDI" class="com.example.model.DI.QuestionDI">
+		<constructor-arg value="111"></constructor-arg>
+		<constructor-arg value="What is java?"></constructor-arg>
+		<constructor-arg>
+			<list>
+				<value>Java is a programming language</value>
+				<value>Java is a Platform</value>
+				<value>Java is an Island of Indonasia</value>
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<!-- Collection :- List With ref -->
+	<bean id="collectionDIObject" class="com.example.model.DI.QuestionDI">
+		<constructor-arg value="222"></constructor-arg>
+		<constructor-arg value="What is java?"></constructor-arg>
+		<constructor-arg>
+			<list>
+				<value>Java is a programming language</value>
+				<value>Java is a Platform</value>
+				<value>Java is an Island of Indonasia</value>
+			</list>
+		</constructor-arg>
+		<constructor-arg>
+			<list>
+				<ref bean="answerDI1" />
+				<ref bean="answerDI2" />
+				<ref bean="answerDI3" />
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="answerDI1" class="com.example.model.DI.AnswerDI">
+		<constructor-arg value="001"></constructor-arg>
+		<constructor-arg value="PHP"></constructor-arg>
+		<constructor-arg value="Maulik"></constructor-arg>
+	</bean>
+
+	<bean id="answerDI2" class="com.example.model.DI.AnswerDI">
+		<constructor-arg value="002"></constructor-arg>
+		<constructor-arg value=".Net"></constructor-arg>
+		<constructor-arg value="Mehul"></constructor-arg>
+	</bean>
+
+	<bean id="answerDI3" class="com.example.model.DI.AnswerDI">
+		<constructor-arg value="003"></constructor-arg>
+		<constructor-arg value="JAVA"></constructor-arg>
+		<constructor-arg value="Rakesh"></constructor-arg>
+	</bean>
+
+	<bean id="userDI1" class="com.example.model.DI.UserDI">
+		<constructor-arg value="1001"></constructor-arg>
+		<constructor-arg value="Maulik User"></constructor-arg>
+		<constructor-arg value="maulik@gmail.com"></constructor-arg>
+	</bean>
+
+	<bean id="userDI2" class="com.example.model.DI.UserDI">
+		<constructor-arg value="1002"></constructor-arg>
+		<constructor-arg value="Parth User"></constructor-arg>
+		<constructor-arg value="parth@gmail.com"></constructor-arg>
+	</bean>
+
+	<!-- Collection DI : Map With ref -->
+	<bean id="mapDI" class="com.example.model.DI.MapDI">
+		<constructor-arg value="1001"></constructor-arg>
+		<constructor-arg value="Adress_User Map"></constructor-arg>
+		<constructor-arg>
+			<map>
+				<entry key-ref="answerDI1" value-ref="userDI1"></entry>
+				<entry key-ref="answerDI2" value-ref="userDI2"></entry>
+			</map>
+		</constructor-arg>
+	</bean>
 
 </beans>

@@ -6,14 +6,6 @@ import org.apache.log4j.Logger;
  * @author Maulik
  * 
  */
-/**
- * @author Maulik
- *
- */
-/**
- * @author Maulik
- * 
- */
 public class StudentDI {
 	private static final Logger logger = Logger.getLogger(StudentDI.class);
 	private String stuId;
