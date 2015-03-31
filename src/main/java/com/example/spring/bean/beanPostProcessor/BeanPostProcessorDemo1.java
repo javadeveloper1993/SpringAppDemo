@@ -9,28 +9,28 @@ import org.springframework.core.Ordered;
  * @author Maulik
  * 
  */
-public class BeanPostProcessorDemo implements BeanPostProcessor,Ordered {
+public class BeanPostProcessorDemo1 implements BeanPostProcessor, Ordered {
 	@SuppressWarnings("unused")
 	private static final Logger logger = Logger
-			.getLogger(BeanPostProcessorDemo.class);
+			.getLogger(BeanPostProcessorDemo1.class);
 
 	@Override
 	public Object postProcessAfterInitialization(Object bean, String beanName)
 			throws BeansException {
-//		 logger.info("AfterInitialization  : " + beanName);
+//		logger.info("AfterInitialization 1 : " + beanName);
 		return bean;
 	}
 
 	@Override
 	public Object postProcessBeforeInitialization(Object bean, String beanName)
 			throws BeansException {
-//		 logger.info("BeforeInitialization  : " + beanName);
+//		logger.info("BeforeInitialization 1 : " + beanName);
 		return bean;
 	}
 
 	@Override
 	public int getOrder() {
-		return 0;
+		return 1;
 	}
 
 }

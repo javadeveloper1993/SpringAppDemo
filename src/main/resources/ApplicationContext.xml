@@ -8,6 +8,9 @@
 	<!-- Bean Post Processor Class Example -->
 	<bean class="com.example.spring.bean.beanPostProcessor.BeanPostProcessorDemo">
 	</bean>
+	
+	<bean class="com.example.spring.bean.beanPostProcessor.BeanPostProcessorDemo1">
+	</bean>
 
 
 	<!-- Simple Bean Example -->
