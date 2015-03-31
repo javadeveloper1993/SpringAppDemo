@@ -8,8 +8,9 @@
 	<!-- Bean Post Processor Class Example -->
 	<bean class="com.example.spring.bean.beanPostProcessor.BeanPostProcessorDemo">
 	</bean>
-	
-	<bean class="com.example.spring.bean.beanPostProcessor.BeanPostProcessorDemo1">
+
+	<bean
+		class="com.example.spring.bean.beanPostProcessor.BeanPostProcessorDemo1">
 	</bean>
 
 
@@ -155,6 +156,46 @@
 				<entry key-ref="answerDI2" value-ref="userDI2"></entry>
 			</map>
 		</constructor-arg>
+	</bean>
+
+	<!-- ========================= Autowiring Example =============================== -->
+
+	<!-- By Name -->
+	<bean id="autowiringDemo" class="com.example.model.Autowiring.AutowiringDemo">
+		<property name="id" value="auto001"></property>
+	</bean>
+
+	<bean id="autowiringMainDemo" class="com.example.model.Autowiring.AutoWiringModel"
+		autowire="byName">
+		<property name="name" value="autoMain001"></property>
+	</bean>
+
+	<!-- By Type -->
+	<bean id="bookDemo" class="com.example.model.Autowiring.Book">
+		<property name="bookname" value="State 2"></property>
+		<property name="bookprice" value="150"></property>
+	</bean>
+
+	<!-- Generate Error By Removing Comment :- Same Type Bean Declare -->
+	<!-- <bean id="bookDemo1" class="com.example.model.Autowiring.Book"> -->
+	<!-- <property name="bookname" value="State 2"></property> -->
+	<!-- <property name="bookprice" value="150"></property> -->
+	<!-- </bean> -->
+
+	<!-- <bean id="bookDemo3" class="com.example.model.Autowiring.Book"> -->
+	<!-- <property name="bookname" value="State 2"></property> -->
+	<!-- <property name="bookprice" value="150"></property> -->
+	<!-- </bean> -->
+
+	<bean id="categoriesMainDemo" class="com.example.model.Autowiring.Categories"
+		autowire="byType">
+		<property name="name" value="Love Story"></property>
+	</bean>
+
+	<!-- By Constructor -->
+	<bean id="categoriesConstructorMainDemo" class="com.example.model.Autowiring.CategoriesConstrucor"
+		autowire="constructor">
+		<property name="name" value="Love Story Constructor"></property>
 	</bean>
 
 </beans>
